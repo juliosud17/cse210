@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         Random gerador = new Random();
-        int magico = gerador.Next(1,101);
+        int magico = gerador.Next(1, 101);
 
         int palpite = -1;
 
