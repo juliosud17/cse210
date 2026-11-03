@@ -9,19 +9,10 @@ class Program
         registro1._textoPergunta = "Qual foi a melhor parte do seu dia?";
         registro1._textoResposta = "Terminei o protótipo do Diário.";
 
-        registro1.Exibir();
-
-        GeradorDePerguntas gerador = new GeradorDePerguntas();
-        
-        string pergunta = gerador.ObterPerguntaAleatoria();
-        Console.WriteLine($"{pergunta}");
-        
-        string pergunta2 = gerador.ObterPerguntaAleatoria();
-        Console.WriteLine($"{pergunta2}");
-
-        string pergunta3 = gerador.ObterPerguntaAleatoria();
-        Console.WriteLine($"{pergunta3}");
-
+        Diario diario = new Diario();
+        diario.AdicionarRegistro(registro1);
+          
+        diario.ExibirTodos();
 
     }
 }
