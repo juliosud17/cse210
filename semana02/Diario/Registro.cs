@@ -10,7 +10,9 @@ public class Registro
 
     public void Exibir()
     {
-        
+        Console.WriteLine($"Data: {_data} - Pergunta: {_textoPergunta}");
+        Console.WriteLine($"Resposta: {_textoResposta}");
+
     }
 
 
