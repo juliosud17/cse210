@@ -10,5 +10,18 @@ class Program
         registro1._textoResposta = "Terminei o protótipo do Diário.";
 
         registro1.Exibir();
+
+        GeradorDePerguntas gerador = new GeradorDePerguntas();
+        
+        string pergunta = gerador.ObterPerguntaAleatoria();
+        Console.WriteLine($"{pergunta}");
+        
+        string pergunta2 = gerador.ObterPerguntaAleatoria();
+        Console.WriteLine($"{pergunta2}");
+
+        string pergunta3 = gerador.ObterPerguntaAleatoria();
+        Console.WriteLine($"{pergunta3}");
+
+
     }
 }
