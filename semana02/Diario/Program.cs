@@ -25,7 +25,21 @@ class Program
 
             if (escolha == 1)
             {
-                Console.WriteLine("em breve");
+                string pergunta  = gerador.ObterPerguntaAleatoria();
+                Console.WriteLine($"{pergunta}");  
+                Console.Write("> ");
+
+                string textoResposta = Console.ReadLine();
+
+                DateTime agora = DateTime.Now;
+                string dataTexto = agora.ToShortDateString();
+
+                Registro novoRegistro = new Registro();
+                novoRegistro._data = dataTexto;
+                novoRegistro._textoPergunta = pergunta;
+                novoRegistro._textoResposta = textoResposta;
+
+                diario.AdicionarRegistro(novoRegistro);
             }
             else if (escolha ==2)
             {
