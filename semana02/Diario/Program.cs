@@ -4,15 +4,46 @@ class Program
 {
     static void Main(string[] args)
     {
-        Registro registro1 = new Registro();
-        registro1._data = "03/11/2026";
-        registro1._textoPergunta = "Qual foi a melhor parte do seu dia?";
-        registro1._textoResposta = "Terminei o protótipo do Diário.";
-
         Diario diario = new Diario();
-        diario.AdicionarRegistro(registro1);
-          
-        diario.ExibirTodos();
 
+        GeradorDePerguntas gerador = new GeradorDePerguntas();          
+
+        int escolha =0;
+
+        while (escolha != 5)
+        {
+            Console.WriteLine("Por favor, escolha uma das seguintes opções:");
+            Console.WriteLine("1. Escrever");
+            Console.WriteLine("2. Exibir");
+            Console.WriteLine("3. Carregar");
+            Console.WriteLine("4. Salvar");
+            Console.WriteLine("5. Sair");
+            Console.Write("O que você gostaria de fazer? ");
+
+            string resposta = Console.ReadLine();
+            escolha = int.Parse(resposta);
+
+            if (escolha == 1)
+            {
+                Console.WriteLine("em breve");
+            }
+            else if (escolha ==2)
+            {
+               diario.ExibirTodos();
+            }
+            else if (escolha ==3)
+            {
+                Console.WriteLine("em breve");
+            }
+            else if (escolha ==4)
+            {
+                Console.WriteLine("em breve");
+            }
+            else if (escolha ==5)
+            {
+                Console.WriteLine("Até logo!");
+            }
+
+        }
     }
 }
