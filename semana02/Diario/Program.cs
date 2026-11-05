@@ -1,3 +1,11 @@
+/* Além dos requisitos:
+   o programa avisa quando o arquivo digitado não existe, sem apagar os registros atuais caso
+   não estiverem salvos, e  não quebra quando o usuário digita algo que não é número no menu inicial.
+ */
+
+
+
+
 using System;
 
 class Program
@@ -21,7 +29,7 @@ class Program
             Console.Write("O que você gostaria de fazer? ");
 
             string resposta = Console.ReadLine();
-            escolha = int.Parse(resposta);
+            int.TryParse(resposta, out escolha);
 
             if (escolha == 1)
             {
@@ -50,7 +58,7 @@ class Program
                 Console.Write("Qual o nome do arquivo? ");
                 string nomeArquivo = Console.ReadLine();
                 diario.CarregarDoArquivo(nomeArquivo);
-
+              
             }
             else if (escolha ==4)
             {
@@ -62,6 +70,10 @@ class Program
             else if (escolha ==5)
             {
                 Console.WriteLine("Até logo!");
+            }
+            else
+            {
+                Console.WriteLine("Opção Inválida. Digite um número de 1 a 5.");
             }
 
         }

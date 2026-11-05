@@ -32,6 +32,12 @@ public class Diario
 
     public void CarregarDoArquivo(string arquivo)
     {
+        if (!File.Exists(arquivo))
+        {
+            Console.WriteLine($"arquivo {arquivo} não encontrado.");
+            return;
+        }
+
         _registros.Clear();
 
         string [] linhas = File.ReadAllLines(arquivo);
@@ -51,7 +57,9 @@ public class Diario
             _registros.Add(novoRegistro);
 
         }
+    
 
+    
     }
 
 
