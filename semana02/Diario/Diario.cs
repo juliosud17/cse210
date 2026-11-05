@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 public class Diario
 {
@@ -20,7 +21,13 @@ public class Diario
 
     public void SalvarNoArquivo(string arquivo)
     {
-        
+        using (StreamWriter escritor = new StreamWriter(arquivo))
+        {
+            foreach (Registro  registro in _registros)
+            {
+                escritor.WriteLine($"{registro._data}~|~{registro._textoPergunta}~|~{registro._textoResposta}");
+            }
+        }
     }
 
     public void CarregarDoArquivo(string arquivo)

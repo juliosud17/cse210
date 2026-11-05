@@ -51,7 +51,10 @@ class Program
             }
             else if (escolha ==4)
             {
-                Console.WriteLine("em breve");
+               
+                Console.Write("Nome do arquivo: ");
+                string nomeArquivo = Console.ReadLine();
+                diario.SalvarNoArquivo(nomeArquivo);
             }
             else if (escolha ==5)
             {
