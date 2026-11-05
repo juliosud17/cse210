@@ -13,11 +13,8 @@ public class GeradorDePerguntas
         "O que você percebeu ou aprendeu sobre si mesmo hoje?",
         "Houve algo que você gostaria de ter feito ou dito de maneira diferente?",
         "Pelo que você se sente grato hoje, mesmo que seja algo pequeno?",
-        "Se pudesse deixar uma mensagem para a sua versão do futuro sobre hoje, o que diria?",
-        
+        "Se pudesse deixar uma mensagem para a sua versão do futuro sobre hoje, o que diria?",  
     };
-
-       
 
     public string ObterPerguntaAleatoria()
     {

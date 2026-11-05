@@ -57,10 +57,5 @@ public class Diario
             _registros.Add(novoRegistro);
 
         }
-    
-
-    
     }
-
-
 }

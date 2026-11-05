@@ -3,9 +3,6 @@
    não estiverem salvos, e  não quebra quando o usuário digita algo que não é número no menu inicial.
  */
 
-
-
-
 using System;
 
 class Program
@@ -49,25 +46,25 @@ class Program
 
                 diario.AdicionarRegistro(novoRegistro);
             }
-            else if (escolha ==2)
+            else if (escolha == 2)
             {
                diario.ExibirTodos();
             }
-            else if (escolha ==3)
+            else if (escolha == 3)
             {
                 Console.Write("Qual o nome do arquivo? ");
                 string nomeArquivo = Console.ReadLine();
                 diario.CarregarDoArquivo(nomeArquivo);
               
             }
-            else if (escolha ==4)
+            else if (escolha == 4)
             {
                
                 Console.Write("Nome do arquivo: ");
                 string nomeArquivo = Console.ReadLine();
                 diario.SalvarNoArquivo(nomeArquivo);
             }
-            else if (escolha ==5)
+            else if (escolha == 5)
             {
                 Console.WriteLine("Até logo!");
             }
