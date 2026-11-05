@@ -32,7 +32,26 @@ public class Diario
 
     public void CarregarDoArquivo(string arquivo)
     {
-        
+        _registros.Clear();
+
+        string [] linhas = File.ReadAllLines(arquivo);
+
+        foreach (string  linha in linhas)
+        {
+            string[] partes = linha.Split("~|~");
+            string data = partes[0];
+            string pergunta = partes[1];
+            string resposta = partes[2];
+
+            Registro novoRegistro = new Registro();
+            novoRegistro._data = data;
+            novoRegistro._textoPergunta = pergunta;
+            novoRegistro._textoResposta = resposta;
+
+            _registros.Add(novoRegistro);
+
+        }
+
     }
 
 

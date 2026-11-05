@@ -47,7 +47,10 @@ class Program
             }
             else if (escolha ==3)
             {
-                Console.WriteLine("em breve");
+                Console.Write("Qual o nome do arquivo? ");
+                string nomeArquivo = Console.ReadLine();
+                diario.CarregarDoArquivo(nomeArquivo);
+
             }
             else if (escolha ==4)
             {
