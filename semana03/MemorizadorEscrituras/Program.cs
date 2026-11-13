@@ -1,25 +1,45 @@
+// Criatividade / além dos requisitos:
+// Melhorei o sorteio das palavras para que apenas as que ainda
+// estão visíveis possam ser escolhidas. Para isso, criei uma
+// lista temporária com as palavras não ocultas.
+// Assim, cada vez que o usuário pressiona Enter, novas palavras
+// são escondidas, evitando repetir palavras já ocultas.
+// Isso torna o programa mais eficiente para memorizar escrituras.
+
 using System;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Palavra palavra = new Palavra("Deus");
+        Referencia referencia = new Referencia("Provérbios", 3, 5, 6);
 
-        Console.WriteLine(palavra.ObterTexto());
-
-        palavra.Ocultar();
-        Console.WriteLine(palavra.ObterTexto());
-
-        palavra.Exibir();
-        Console.WriteLine(palavra.ObterTexto());
-
-        Referencia referencia = new Referencia("Joao", 3, 16);
-        Console.WriteLine(referencia.ObterTexto());
-
-        Referencia referencia2 = new Referencia("Joao", 3, 16, 25);
-        Console.WriteLine(referencia2.ObterTexto());
+        string texto = "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento. Reconhece-o em todos os teus caminhos, e ele endireitará as tuas veredas.";
         
-    
+        Escritura escritura = new Escritura(referencia, texto);
+
+        while (true)
+        {
+            Console.Clear();
+
+            Console.WriteLine(escritura.ObterTexto());
+            Console.WriteLine();
+
+            if (escritura.EstaCompletamenteOculta())
+            {
+                break;
+            }
+
+            Console.WriteLine("Pressione Enter para continuar ou digite 'sair' para terminar:");
+            string resposta = Console.ReadLine() ?? "";
+
+            if (resposta.ToLower() == "sair")
+            {
+                break;
+            }
+
+            escritura.OcultarPalavrasAleatorias(3);
+        }
+
     }
 }
